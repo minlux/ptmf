@@ -1,0 +1,68 @@
+__________PtmfA__________
+this => 0063fef4
+sizeof(PtmfA) => 12
+----------DATA-----------
+&this->a1 => 0063fef4 (this + 0)
+&this->a2 => 0063fef8 (this + 4)
+&this->a3 => 0063fefc (this + 8)
+----------PTMF-----------
+&PtmfA::learnA => 00000000:004013e4
+
+
+__________PtmfB__________
+this => 0063fee8
+sizeof(PtmfA) => 12
+----------DATA-----------
+&this->b1 => 0063fee8 (this + 0)
+&this->b2 => 0063feec (this + 4)
+&this->b3 => 0063fef0 (this + 8)
+----------PTMF-----------
+&PtmfB::learnB  => 00000000:004014c4
+&PtmfB::learnB1 => 00000000:004015d8
+
+
+__________PtmfC__________
+this => 0063feb4
+sizeof(PtmfA) => 16
+----------DATA-----------
+&this->c1 => 0063feb8 (this + 4)
+&this->c2 => 0063febc (this + 8)
+&this->c3 => 0063fec0 (this + 12)
+----------PTMF-----------
+&PtmfC::learnC  => 00000000:004015ee
+&PtmfC::learnC1 => 00000000:00000001
+&PtmfC::learnC2 => 00000000:00000005
+&PtmfC::learnC3 => 00000000:00000009
+
+
+__________PtmfX__________
+this => 0063feb4
+sizeof(PtmfX) => 52
+----------OFFSETS-----------
+(PtmfA *)this => 0063fec4 (this + 16)
+(PtmfB *)this => 0063fed0 (this + 28)
+(PtmfC *)this => 0063feb4 (this + 0)
+----------DATA-----------
+&this->a1 => 0063fec4 (this + 16)
+&this->a2 => 0063fec8 (this + 20)
+&this->a3 => 0063fecc (this + 24)
+&this->b1 => 0063fed0 (this + 28)
+&this->b2 => 0063fed4 (this + 32)
+&this->b3 => 0063fed8 (this + 36)
+&this->c1 => 0063feb8 (this + 4)
+&this->c2 => 0063febc (this + 8)
+&this->c3 => 0063fec0 (this + 12)
+&this->x1 => 0063fedc (this + 40)
+&this->x2 => 0063fee0 (this + 44)
+&this->x3 => 0063fee4 (this + 48)
+----------CODE-----------
+&PtmfX::learnA  => 00000010:004013e4
+&PtmfX::learnB  => 0000001c:004014c4
+&PtmfB::learnB1 => 0000001c:004015d8   <-- base class's learnB1 (PtmfB::learnB1)
+&PtmfX::learnB1 => 00000000:0040179c   <-- child class's learnB1 (PtmfX::learnB1)
+&PtmfX::learnC  => 00000000:004015ee
+&PtmfX::learnC1 => 00000000:00000001   <-- virtual functions are diffrent
+&PtmfX::learnC2 => 00000000:00000005   <-- virtual functions are diffrent
+&PtmfX::learnC3 => 00000000:00000009   <-- virtual functions are diffrent
+&PtmfX::learnX  => 00000000:004017e4
+&PtmfX::learnX1 => 00000000:0000000d   <-- virtual functions are diffrent

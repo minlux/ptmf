@@ -1,0 +1,45 @@
+@startuml
+class PtmfA {
+   a1 : int
+   a2 : int
+   a3 : void *
+   void learnA()
+}
+
+class PtmfB {
+   b1 : int
+   b2 : int
+   b3 : void *
+   void learnB()
+   void learnB1()
+}
+
+abstract class PtmfC {
+   c1 : int
+   c2 : int
+   c3 : void *
+   void learnC()
+   virtual void learnC1()
+   virtual void learnC2()
+   virtual void learnC3() = 0
+}
+
+
+class PtmfX {
+   x1 : int
+   x2 : int
+   x3 : void *
+   void learnB1()
+   void learnC2()
+   void learnC3()
+   void learnX()
+   virtual void learnX1()
+}
+
+
+
+PtmfA <|-- PtmfX
+PtmfB <|-- PtmfX
+PtmfC <|-- PtmfX
+
+@enduml

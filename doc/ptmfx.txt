@@ -1,0 +1,22 @@
+@startuml
+class PtmfX {
+   __PtmfC (this+0)__
+   vtab : invisible -> [+0: &learnC1, +4: &learnC2, +8: &learnC3, +12: &learnX1]
+   c1 : int
+   c2 : int
+   c3 : void *
+   __PtmfA (this+16)__
+   a1 : int
+   a2 : int
+   a3 : void *
+   __PtmfB (this+28)__
+   b1 : int
+   b2 : int
+   b3 : void *
+   __PtmfX (this+40)__
+   x1 : int
+   x2 : int
+   x3 : void *
+}
+
+@enduml

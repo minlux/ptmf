@@ -1,0 +1,12 @@
+@startuml
+class Person {
+   {static} static char * race(void)
+   char * fist_name(void)
+   char * last_name(void)
+   void set_age(int)
+   char fn[32]
+   char ln[32]
+   int age
+}
+
+@enduml
