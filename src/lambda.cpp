@@ -51,9 +51,9 @@ public:
    FlexibleCallback(nullptr_t nul)
    {
       (void)nul; //not used
+      cout << "FlexibleCallback construction using nullptr_t" << endl;
       this->cb.fp = nullptr;
       this->cb.arg = nullptr;
-      cout << "FlexibleCallback construction using nullptr_t" << endl;
    }
 
    template<typename T>
@@ -66,28 +66,29 @@ public:
          Callback_t cb;
          void * debug[2];
       } u;
-      //here we use the union to perform the type erasure
-      u.ptmf = &T::operator(); //get pointer to member function (ptmf). Attention: there are two pointers inside. (1st: address of member function "operator()"; 2nd: offset to be added to the instance pointer (to perform an optional upcast))
-      u.cb.arg = (void *)((uintptr_t)&t + (uintptr_t)u.cb.arg); //add the offset information from the ptmf to the instance pointer t.
-      this->cb = u.cb; //store/copy ABI compatible C representation to call a C++ member function. some persons would say that's dirty!?
       cout << "FlexibleCallback construction using T&" << endl;
       cout << "- sizeof(T): " << sizeof(T) << endl;
-      cout << "- &operator(): " << u.debug[0] << endl;
-      cout << "- &t: " << u.debug[1] << endl;
+      //here we use the union to perform the type erasure
+      u.ptmf = &T::operator(); //get pointer to member function (ptmf). Attention: there are two pointers inside. (1st: address of member function "operator()"; 2nd: offset to be added to the instance pointer (to perform an optional upcast))
+      cout << "- &operator() [0]: " << u.debug[0] << endl;
+      cout << "- &operator() [1]: " << u.debug[1] << endl;
+      cout << "- &t: " << (void *)&t << endl;
+      u.cb.arg = (void *)((uintptr_t)&t + (uintptr_t)u.cb.arg); //add the offset information from the ptmf to the instance pointer t.
+      this->cb = u.cb; //store/copy ABI compatible C representation to call a C++ member function. some persons would say that's dirty!?
    }
 
    FlexibleCallback(Fp_t cb)
    {
+      cout << "FlexibleCallback construction using Fp_t" << endl;
       this->cb.fp = cb;
       this->cb.arg = nullptr;
-      cout << "FlexibleCallback construction using Fp_t" << endl;
    }
 
    explicit FlexibleCallback(Fp_t cb, void * arg)
    {
+      cout << "FlexibleCallback construction using <Fp_t, void*>" << endl;
       this->cb.fp = cb;
       this->cb.arg = arg;
-      cout << "FlexibleCallback construction using <Fp_t, void*>" << endl;
    }
 
    int operator()(char * buffer, int size) const
