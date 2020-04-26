@@ -14,7 +14,9 @@ Using a function pointer to point to `char * Person::race(void)` is possible, as
 char * (*getRace)(void) = &Person::race;
 ```
 
-However a function pointer can't be used to point to `char * Person::first_name(void)` or  `char * Person::first_last(void)` as a *Person* instance is required to get the name of the respective persion. This is where a C++ pointer to member function *ptmf* comes into play:
+However a function pointer can't be used to point to `char * Person::first_name(void)` or  `char * Person::first_last(void)` as a *Person* instance is required to get the name of the respective persion. This is where a C++ pointer to member function *ptmf* comes into play.
+
+See also my notes in [lambda.md](lambda.md) to see how  *fp*s and *ptmf*s are used in combination with **C++ lambdas**.
 
 
 ## Comparison *fp*s and *ptmf*s

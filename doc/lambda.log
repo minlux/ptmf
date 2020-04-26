@@ -1,0 +1,47 @@
+1)----------------
+FlexibleCallback construction using nullptr_t
+
+2)----------------
+FlexibleCallback construction using Fp_t
+a_c_send_function: Bufsize = 128
+
+3)----------------
+FlexibleCallback construction using <Fp_t, void*>
+a_c_lambda: Bufsize = 128
+Capture: 0
+
+4)-----------------
+FlexibleCallback construction using <Fp_t, void*>
+a_c_send_function: Bufsize = 128
+Status: 7
+
+5)-----------------
+FlexibleCallback construction using T&
+- sizeof(T): 1
+- &operator(): 0x563b1b1f3be6
+- &t: 0x7ffd131fb608
+C-Lambda: Bufsize = 128
+
+6)-----------------
+FlexibleCallback construction using T&
+- sizeof(T): 8
+- &operator(): 0x563b1b1f3c42
+- &t: 0x7ffd131fb608
+Object-Lambda: Bufsize = 128
+Capture: 42
+
+7)-----------------
+FlexibleCallback construction using T&
+- sizeof(T): 8
+- &operator(): 0x563b1b1f3cea
+- &t: 0x7ffd131fb608
+Object-Lambda: Bufsize = 128
+Capture: 43
+
+8)-----------------
+FlexibleCallback construction using T&
+- sizeof(T): 4
+- &operator(): 0x563b1b1f3d92
+- &t: 0x7ffd131fb608
+Object-Lambda: Bufsize = 128
+Capture: 44

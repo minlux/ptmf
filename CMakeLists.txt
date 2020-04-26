@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -O0")
 #link_libraries(ws2_32 wsock32)
 
 #---------------------------------------------------------------------------------------
-# Application
+# PTMF
 #---------------------------------------------------------------------------------------
 add_executable(ptmf
    src/main.cpp
@@ -19,4 +19,12 @@ add_executable(ptmf
 target_include_directories(ptmf PRIVATE
    src
 )
+
+#---------------------------------------------------------------------------------------
+# LAMBDA
+#---------------------------------------------------------------------------------------
+add_executable(lambda
+   src/lambda.cpp
+)
+
 
