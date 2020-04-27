@@ -12,6 +12,8 @@
    https://www.heise.de/developer/artikel/C-Core-Guidelines-Type-Erasure-4158206.html
    https://www.heise.de/developer/artikel/C-Core-Guidelines-Type-Erasure-mit-Templates-4164863.html
    https://www.heise.de/developer/artikel/C-Core-Guidelines-Regeln-zu-Templates-und-generischer-Programmierung-4152964.html
+   
+   http://davekilian.com/cpp-type-erasure.html   <- that explains "type erasure" best!
 */
 //-----------------------------------------------------------------------------
 
